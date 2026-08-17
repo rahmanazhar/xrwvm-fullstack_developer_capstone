@@ -1,11 +1,14 @@
 $ git push origin main
+To https://github.com/rahmanazhar/xrwvm-fullstack_developer_capstone.git
+   6bf6c0a..bc0ee27  main -> main
+
 $ gh run list --limit 1
-completed	success	feat: add CI workflow, deployment manifests and rubric screenshots	Lint Code	main	push	32038159884	19s	2026-08-17T14:11:24Z
+completed	success	docs: regenerate Express dealer artifacts against current seeded data	Lint Code	main	push	32039901520	16s	2026-08-17T14:41:13Z
 
 $ gh run view 32038159884
 
 ✓ main Lint Code · 32038159884
-Triggered via push less than a minute ago
+Triggered via push about 37 minutes ago
 
 JOBS
 ✓ Lint JS Files in 14s (ID 95412569651)
@@ -22,318 +25,36 @@ Lint Python Files: .github#2
 For more information about a job, try: gh run view --job=<job-id>
 View this run on GitHub: https://github.com/rahmanazhar/xrwvm-fullstack_developer_capstone/actions/runs/32038159884
 
-$ gh run view 32038159884 --log
-Lint JS Files	Set up job	﻿2026-08-17T14:11:29.1631267Z Current runner version: '2.336.0'
-Lint JS Files	Set up job	2026-08-17T14:11:29.1659039Z ##[group]Runner Image Provisioner
-Lint JS Files	Set up job	2026-08-17T14:11:29.1659998Z Hosted Compute Agent
-Lint JS Files	Set up job	2026-08-17T14:11:29.1660699Z Version: 20260729.566
-Lint JS Files	Set up job	2026-08-17T14:11:29.1661361Z Commit: cf7153fe6e25b664e8693c24944bf2b00355d109
-Lint JS Files	Set up job	2026-08-17T14:11:29.1662144Z Build Date: 2026-07-29T19:17:02Z
-Lint JS Files	Set up job	2026-08-17T14:11:29.1662866Z Worker ID: {afe38c74-9130-4a0b-a669-210dde7d4c6f}
-Lint JS Files	Set up job	2026-08-17T14:11:29.1663629Z Azure Region: westus
-Lint JS Files	Set up job	2026-08-17T14:11:29.1664527Z ##[endgroup]
-Lint JS Files	Set up job	2026-08-17T14:11:29.1666101Z ##[group]Operating System
-Lint JS Files	Set up job	2026-08-17T14:11:29.1666769Z Ubuntu
-Lint JS Files	Set up job	2026-08-17T14:11:29.1667443Z 24.04.4
-Lint JS Files	Set up job	2026-08-17T14:11:29.1668011Z LTS
-Lint JS Files	Set up job	2026-08-17T14:11:29.1668575Z ##[endgroup]
-Lint JS Files	Set up job	2026-08-17T14:11:29.1669163Z ##[group]Runner Image
-Lint JS Files	Set up job	2026-08-17T14:11:29.1669774Z Image: ubuntu-24.04
-Lint JS Files	Set up job	2026-08-17T14:11:29.1670407Z Version: 20260810.271.1
-Lint JS Files	Set up job	2026-08-17T14:11:29.1671521Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260810.271/images/ubuntu/Ubuntu2404-Readme.md
-Lint JS Files	Set up job	2026-08-17T14:11:29.1673724Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260810.271
-Lint JS Files	Set up job	2026-08-17T14:11:29.1675102Z ##[endgroup]
-Lint JS Files	Set up job	2026-08-17T14:11:29.1676492Z ##[group]GITHUB_TOKEN Permissions
-Lint JS Files	Set up job	2026-08-17T14:11:29.1678707Z Contents: read
-Lint JS Files	Set up job	2026-08-17T14:11:29.1679440Z Metadata: read
-Lint JS Files	Set up job	2026-08-17T14:11:29.1680022Z Packages: read
-Lint JS Files	Set up job	2026-08-17T14:11:29.1680583Z ##[endgroup]
-Lint JS Files	Set up job	2026-08-17T14:11:29.1682872Z Secret source: Actions
-Lint JS Files	Set up job	2026-08-17T14:11:29.1684299Z Prepare workflow directory
-Lint JS Files	Set up job	2026-08-17T14:11:29.2040515Z Prepare all required actions
-Lint JS Files	Set up job	2026-08-17T14:11:29.2092802Z Getting action download info
-Lint JS Files	Set up job	2026-08-17T14:11:29.5530081Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
-Lint JS Files	Set up job	2026-08-17T14:11:29.7076514Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
-Lint JS Files	Set up job	2026-08-17T14:11:29.9025962Z Complete job name: Lint JS Files
-Lint JS Files	Checkout the repository	﻿2026-08-17T14:11:29.9812314Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9821687Z ##[group]Run actions/checkout@v4
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9822493Z with:
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9823100Z   repository: rahmanazhar/xrwvm-fullstack_developer_capstone
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9827242Z   token: ***
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9827723Z   ssh-strict: true
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9828220Z   ssh-user: git
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9828694Z   persist-credentials: true
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9829209Z   clean: true
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9829690Z   sparse-checkout-cone-mode: true
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9830257Z   fetch-depth: 1
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9830721Z   fetch-tags: false
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9831190Z   show-progress: true
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9831665Z   lfs: false
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9832112Z   submodules: false
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9832636Z   set-safe-directory: true
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9833187Z   allow-unsafe-pr-checkout: false
-Lint JS Files	Checkout the repository	2026-08-17T14:11:29.9834203Z ##[endgroup]
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.0858802Z Syncing repository: rahmanazhar/xrwvm-fullstack_developer_capstone
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.0860882Z ##[group]Getting Git version info
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.0862011Z Working directory is '/home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone'
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.0863620Z [command]/usr/bin/git version
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.0928080Z git version 2.54.0
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.0951058Z ##[endgroup]
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.0966217Z Temporarily overriding HOME='/home/runner/work/_temp/e4b726f1-52b1-4418-9456-113fd35e1f74' before making global git config changes
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.0968385Z Adding repository directory to the temporary git global config as a safe directory
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.0972036Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1024916Z Deleting the contents of '/home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone'
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1029200Z ##[group]Initializing the repository
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1035343Z [command]/usr/bin/git init /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1141393Z hint: Using 'master' as the name for the initial branch. This default branch name
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1142888Z hint: will change to "main" in Git 3.0. To configure the initial branch name
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1144818Z hint: to use in all of your new repositories, which will suppress this warning,
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1146639Z hint: call:
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1147306Z hint:
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1148004Z hint: 	git config --global init.defaultBranch <name>
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1148676Z hint:
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1149317Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1150343Z hint: 'development'. The just-created branch can be renamed via this command:
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1151122Z hint:
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1151561Z hint: 	git branch -m <name>
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1152064Z hint:
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1152727Z hint: Disable this message with "git config set advice.defaultBranchName false"
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1154594Z Initialized empty Git repository in /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone/.git/
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1159437Z [command]/usr/bin/git remote add origin https://github.com/rahmanazhar/xrwvm-fullstack_developer_capstone
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1205340Z ##[endgroup]
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1206192Z ##[group]Disabling automatic garbage collection
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1209477Z [command]/usr/bin/git config --local gc.auto 0
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1239992Z ##[endgroup]
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1240794Z ##[group]Setting up auth
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1247638Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1287504Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1653646Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1687345Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1917079Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.1950953Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.2178439Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.2217594Z ##[endgroup]
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.2218868Z ##[group]Fetching the repository
-Lint JS Files	Checkout the repository	2026-08-17T14:11:30.2232157Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bc0ee27361a2541e23feb8b36ccf851d984877ac:refs/remotes/origin/main
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0421964Z From https://github.com/rahmanazhar/xrwvm-fullstack_developer_capstone
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0424611Z  * [new ref]         bc0ee27361a2541e23feb8b36ccf851d984877ac -> origin/main
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0459751Z ##[endgroup]
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0461532Z ##[group]Determining the checkout info
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0463465Z ##[endgroup]
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0470116Z [command]/usr/bin/git sparse-checkout disable
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0521881Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0557231Z ##[group]Checking out the ref
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0561595Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0878529Z Switched to a new branch 'main'
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0884653Z branch 'main' set up to track 'origin/main'.
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0891705Z ##[endgroup]
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0938491Z [command]/usr/bin/git log -1 --format=%H
-Lint JS Files	Checkout the repository	2026-08-17T14:11:31.0963530Z bc0ee27361a2541e23feb8b36ccf851d984877ac
-Lint JS Files	Set up Node	﻿2026-08-17T14:11:31.1354945Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Lint JS Files	Set up Node	2026-08-17T14:11:31.1360136Z ##[group]Run actions/setup-node@v4
-Lint JS Files	Set up Node	2026-08-17T14:11:31.1361303Z with:
-Lint JS Files	Set up Node	2026-08-17T14:11:31.1362212Z   node-version: 18
-Lint JS Files	Set up Node	2026-08-17T14:11:31.1363215Z   always-auth: false
-Lint JS Files	Set up Node	2026-08-17T14:11:31.1364434Z   check-latest: false
-Lint JS Files	Set up Node	2026-08-17T14:11:31.1372341Z   token: ***
-Lint JS Files	Set up Node	2026-08-17T14:11:31.1373293Z ##[endgroup]
-Lint JS Files	Set up Node	2026-08-17T14:11:31.2901992Z Attempting to download 18...
-Lint JS Files	Set up Node	2026-08-17T14:11:31.3064250Z (node:2206) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-Lint JS Files	Set up Node	2026-08-17T14:11:31.3067011Z (Use `node --trace-deprecation ...` to show where the warning was created)
-Lint JS Files	Set up Node	2026-08-17T14:11:33.7414975Z Acquiring 18.20.8 - x64 from https://github.com/actions/node-versions/releases/download/18.20.8-14110393767/node-18.20.8-linux-x64.tar.gz
-Lint JS Files	Set up Node	2026-08-17T14:11:34.2016509Z Extracting ...
-Lint JS Files	Set up Node	2026-08-17T14:11:34.2138680Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/007e8cc8-4efd-47fc-8fe7-c0010117c40e -f /home/runner/work/_temp/92d80dc7-08c6-4a91-bcd8-5512d9fc9e28
-Lint JS Files	Set up Node	2026-08-17T14:11:35.1501895Z Adding to the cache ...
-Lint JS Files	Set up Node	2026-08-17T14:11:37.0345583Z ##[group]Environment details
-Lint JS Files	Set up Node	2026-08-17T14:11:37.2743627Z node: v18.20.8
-Lint JS Files	Set up Node	2026-08-17T14:11:37.2744685Z npm: 10.8.2
-Lint JS Files	Set up Node	2026-08-17T14:11:37.2745064Z yarn: 1.22.22
-Lint JS Files	Set up Node	2026-08-17T14:11:37.2745660Z ##[endgroup]
-Lint JS Files	Install jshint	﻿2026-08-17T14:11:37.2921537Z ##[group]Run npm install jshint --global
-Lint JS Files	Install jshint	2026-08-17T14:11:37.2921998Z ^[[36;1mnpm install jshint --global^[[0m
-Lint JS Files	Install jshint	2026-08-17T14:11:37.2965307Z shell: /usr/bin/bash -e {0}
-Lint JS Files	Install jshint	2026-08-17T14:11:37.2965623Z ##[endgroup]
-Lint JS Files	Install jshint	2026-08-17T14:11:38.4578709Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
-Lint JS Files	Install jshint	2026-08-17T14:11:38.4602250Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
-Lint JS Files	Install jshint	2026-08-17T14:11:38.7310036Z 
-Lint JS Files	Install jshint	2026-08-17T14:11:38.7310912Z added 31 packages in 1s
-Lint JS Files	Install jshint	2026-08-17T14:11:38.7311357Z 
-Lint JS Files	Install jshint	2026-08-17T14:11:38.7311628Z 3 packages are looking for funding
-Lint JS Files	Install jshint	2026-08-17T14:11:38.7312088Z   run `npm fund` for details
+$ gh api repos/rahmanazhar/xrwvm-fullstack_developer_capstone/actions/runs/32038159884/jobs --jq '<steps>'
+
+JOB: Lint JS Files  [success]  2026-08-17T14:11:28Z -> 2026-08-17T14:11:42Z
+   step 1. Set up job  [success]
+   step 2. Checkout the repository  [success]
+   step 3. Set up Node  [success]
+   step 4. Install jshint  [success]
+   step 5. Lint the Express service with jshint  [success]
+   step 9. Post Set up Node  [success]
+   step 10. Post Checkout the repository  [success]
+   step 11. Complete job  [success]
+
+JOB: Lint Python Files  [success]  2026-08-17T14:11:26Z -> 2026-08-17T14:11:35Z
+   step 1. Set up job  [success]
+   step 2. Checkout the repository  [success]
+   step 3. Set up Python  [success]
+   step 4. Install flake8  [success]
+   step 5. Lint every Python file with flake8  [success]
+   step 9. Post Set up Python  [success]
+   step 10. Post Checkout the repository  [success]
+   step 11. Complete job  [success]
+
+$ gh run view 32038159884 --log   # lint step output
+
 Lint JS Files	Lint the Express service with jshint	﻿2026-08-17T14:11:38.7456251Z ##[group]Run jshint --config .jshintrc server/database/*.js
 Lint JS Files	Lint the Express service with jshint	2026-08-17T14:11:38.7456753Z ^[[36;1mjshint --config .jshintrc server/database/*.js^[[0m
 Lint JS Files	Lint the Express service with jshint	2026-08-17T14:11:38.7457114Z ^[[36;1mecho "Linted JS files successfully"^[[0m
 Lint JS Files	Lint the Express service with jshint	2026-08-17T14:11:38.7495911Z shell: /usr/bin/bash -e {0}
 Lint JS Files	Lint the Express service with jshint	2026-08-17T14:11:38.7496195Z ##[endgroup]
 Lint JS Files	Lint the Express service with jshint	2026-08-17T14:11:38.8787095Z Linted JS files successfully
-Lint JS Files	Post Set up Node	﻿2026-08-17T14:11:38.8891017Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Lint JS Files	Post Set up Node	2026-08-17T14:11:38.8892276Z Post job cleanup.
-Lint JS Files	Post Set up Node	2026-08-17T14:11:39.0187064Z (node:2262) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-Lint JS Files	Post Set up Node	2026-08-17T14:11:39.0188410Z (Use `node --trace-deprecation ...` to show where the warning was created)
-Lint JS Files	Post Checkout the repository	﻿2026-08-17T14:11:39.0377255Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.0378707Z Post job cleanup.
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.1394930Z [command]/usr/bin/git version
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.1439696Z git version 2.54.0
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.1499619Z Temporarily overriding HOME='/home/runner/work/_temp/2f515dfc-cdbd-4815-80e9-64bcc9e768c6' before making global git config changes
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.1500980Z Adding repository directory to the temporary git global config as a safe directory
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.1508327Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.1556881Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.1606516Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.1869167Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.1899591Z http.https://github.com/.extraheader
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.1913286Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.1961672Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.2225667Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-Lint JS Files	Post Checkout the repository	2026-08-17T14:11:39.2261499Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-Lint JS Files	Complete job	﻿2026-08-17T14:11:39.2641887Z Cleaning up orphan processes
-Lint JS Files	Complete job	2026-08-17T14:11:39.2945778Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Lint Python Files	Set up job	﻿2026-08-17T14:11:26.9944393Z Current runner version: '2.336.0'
-Lint Python Files	Set up job	2026-08-17T14:11:26.9963408Z ##[group]Runner Image Provisioner
-Lint Python Files	Set up job	2026-08-17T14:11:26.9964029Z Hosted Compute Agent
-Lint Python Files	Set up job	2026-08-17T14:11:26.9964471Z Version: 20260729.566
-Lint Python Files	Set up job	2026-08-17T14:11:26.9964894Z Commit: cf7153fe6e25b664e8693c24944bf2b00355d109
-Lint Python Files	Set up job	2026-08-17T14:11:26.9965403Z Build Date: 2026-07-29T19:17:02Z
-Lint Python Files	Set up job	2026-08-17T14:11:26.9965861Z Worker ID: {3ab43213-17b0-4acf-8fbc-2acb0345f58a}
-Lint Python Files	Set up job	2026-08-17T14:11:26.9966335Z Azure Region: centralus
-Lint Python Files	Set up job	2026-08-17T14:11:26.9966722Z ##[endgroup]
-Lint Python Files	Set up job	2026-08-17T14:11:26.9967565Z ##[group]Operating System
-Lint Python Files	Set up job	2026-08-17T14:11:26.9967964Z Ubuntu
-Lint Python Files	Set up job	2026-08-17T14:11:26.9968334Z 24.04.4
-Lint Python Files	Set up job	2026-08-17T14:11:26.9969005Z LTS
-Lint Python Files	Set up job	2026-08-17T14:11:26.9969363Z ##[endgroup]
-Lint Python Files	Set up job	2026-08-17T14:11:26.9969732Z ##[group]Runner Image
-Lint Python Files	Set up job	2026-08-17T14:11:26.9970144Z Image: ubuntu-24.04
-Lint Python Files	Set up job	2026-08-17T14:11:26.9970526Z Version: 20260810.271.1
-Lint Python Files	Set up job	2026-08-17T14:11:26.9971205Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260810.271/images/ubuntu/Ubuntu2404-Readme.md
-Lint Python Files	Set up job	2026-08-17T14:11:26.9972705Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260810.271
-Lint Python Files	Set up job	2026-08-17T14:11:26.9973395Z ##[endgroup]
-Lint Python Files	Set up job	2026-08-17T14:11:26.9974195Z ##[group]GITHUB_TOKEN Permissions
-Lint Python Files	Set up job	2026-08-17T14:11:26.9975934Z Contents: read
-Lint Python Files	Set up job	2026-08-17T14:11:26.9976336Z Metadata: read
-Lint Python Files	Set up job	2026-08-17T14:11:26.9976719Z Packages: read
-Lint Python Files	Set up job	2026-08-17T14:11:26.9977067Z ##[endgroup]
-Lint Python Files	Set up job	2026-08-17T14:11:26.9978747Z Secret source: Actions
-Lint Python Files	Set up job	2026-08-17T14:11:26.9979485Z Prepare workflow directory
-Lint Python Files	Set up job	2026-08-17T14:11:27.0367550Z Prepare all required actions
-Lint Python Files	Set up job	2026-08-17T14:11:27.0402685Z Getting action download info
-Lint Python Files	Set up job	2026-08-17T14:11:27.2629152Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
-Lint Python Files	Set up job	2026-08-17T14:11:27.5779276Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
-Lint Python Files	Set up job	2026-08-17T14:11:27.9289128Z Complete job name: Lint Python Files
-Lint Python Files	Checkout the repository	﻿2026-08-17T14:11:27.9933689Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9941952Z ##[group]Run actions/checkout@v4
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9942955Z with:
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9943818Z   repository: rahmanazhar/xrwvm-fullstack_developer_capstone
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9950180Z   token: ***
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9950988Z   ssh-strict: true
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9951692Z   ssh-user: git
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9952425Z   persist-credentials: true
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9953244Z   clean: true
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9953935Z   sparse-checkout-cone-mode: true
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9954759Z   fetch-depth: 1
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9955453Z   fetch-tags: false
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9956179Z   show-progress: true
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9956911Z   lfs: false
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9957562Z   submodules: false
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9958365Z   set-safe-directory: true
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9959384Z   allow-unsafe-pr-checkout: false
-Lint Python Files	Checkout the repository	2026-08-17T14:11:27.9960384Z ##[endgroup]
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.0721324Z Syncing repository: rahmanazhar/xrwvm-fullstack_developer_capstone
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.0723724Z ##[group]Getting Git version info
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.0725173Z Working directory is '/home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone'
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.0727237Z [command]/usr/bin/git version
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.1236945Z git version 2.54.0
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.1251704Z ##[endgroup]
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.1262297Z Temporarily overriding HOME='/home/runner/work/_temp/35d061e6-83a7-4067-a2cd-ea52c57f8676' before making global git config changes
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.1264347Z Adding repository directory to the temporary git global config as a safe directory
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.1267542Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.1388992Z Deleting the contents of '/home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone'
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.1394565Z ##[group]Initializing the repository
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.1399421Z [command]/usr/bin/git init /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2410283Z hint: Using 'master' as the name for the initial branch. This default branch name
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2412561Z hint: will change to "main" in Git 3.0. To configure the initial branch name
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2414266Z hint: to use in all of your new repositories, which will suppress this warning,
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2415710Z hint: call:
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2416563Z hint:
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2417581Z hint: 	git config --global init.defaultBranch <name>
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2418941Z hint:
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2420081Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2421949Z hint: 'development'. The just-created branch can be renamed via this command:
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2423421Z hint:
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2424233Z hint: 	git branch -m <name>
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2425125Z hint:
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2426261Z hint: Disable this message with "git config set advice.defaultBranchName false"
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2428891Z Initialized empty Git repository in /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone/.git/
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.2432523Z [command]/usr/bin/git remote add origin https://github.com/rahmanazhar/xrwvm-fullstack_developer_capstone
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.3008039Z ##[endgroup]
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.3009974Z ##[group]Disabling automatic garbage collection
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.3011414Z [command]/usr/bin/git config --local gc.auto 0
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.4111430Z ##[endgroup]
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.4112896Z ##[group]Setting up auth
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.4117344Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.4144862Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.5297332Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.5321304Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.5466550Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.5491475Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.5635298Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.5789338Z ##[endgroup]
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.5790593Z ##[group]Fetching the repository
-Lint Python Files	Checkout the repository	2026-08-17T14:11:28.5795869Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bc0ee27361a2541e23feb8b36ccf851d984877ac:refs/remotes/origin/main
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.5878672Z From https://github.com/rahmanazhar/xrwvm-fullstack_developer_capstone
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.5879715Z  * [new ref]         bc0ee27361a2541e23feb8b36ccf851d984877ac -> origin/main
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.5896862Z ##[endgroup]
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.5899425Z ##[group]Determining the checkout info
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.5900186Z ##[endgroup]
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.5903694Z [command]/usr/bin/git sparse-checkout disable
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.5933154Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.5952237Z ##[group]Checking out the ref
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.5955610Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.6208791Z Switched to a new branch 'main'
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.6209903Z branch 'main' set up to track 'origin/main'.
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.6213377Z ##[endgroup]
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.6240262Z [command]/usr/bin/git log -1 --format=%H
-Lint Python Files	Checkout the repository	2026-08-17T14:11:29.6256665Z bc0ee27361a2541e23feb8b36ccf851d984877ac
-Lint Python Files	Set up Python	﻿2026-08-17T14:11:29.6458274Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Lint Python Files	Set up Python	2026-08-17T14:11:29.6459634Z ##[group]Run actions/setup-python@v5
-Lint Python Files	Set up Python	2026-08-17T14:11:29.6459907Z with:
-Lint Python Files	Set up Python	2026-08-17T14:11:29.6460190Z   python-version: 3.12
-Lint Python Files	Set up Python	2026-08-17T14:11:29.6460441Z   check-latest: false
-Lint Python Files	Set up Python	2026-08-17T14:11:29.6462121Z   token: ***
-Lint Python Files	Set up Python	2026-08-17T14:11:29.6462385Z   update-environment: true
-Lint Python Files	Set up Python	2026-08-17T14:11:29.6462652Z   allow-prereleases: false
-Lint Python Files	Set up Python	2026-08-17T14:11:29.6462937Z   freethreaded: false
-Lint Python Files	Set up Python	2026-08-17T14:11:29.6463199Z ##[endgroup]
-Lint Python Files	Set up Python	2026-08-17T14:11:29.7411572Z ##[group]Installed versions
-Lint Python Files	Set up Python	2026-08-17T14:11:29.7633830Z (node:2083) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-Lint Python Files	Set up Python	2026-08-17T14:11:29.7634640Z (Use `node --trace-deprecation ...` to show where the warning was created)
-Lint Python Files	Set up Python	2026-08-17T14:11:29.7635316Z Successfully set up CPython (3.12.13)
-Lint Python Files	Set up Python	2026-08-17T14:11:29.7636912Z ##[endgroup]
-Lint Python Files	Install flake8	﻿2026-08-17T14:11:29.7770062Z ##[group]Run pip install flake8
-Lint Python Files	Install flake8	2026-08-17T14:11:29.7770522Z ^[[36;1mpip install flake8^[[0m
-Lint Python Files	Install flake8	2026-08-17T14:11:29.7804171Z shell: /usr/bin/bash -e {0}
-Lint Python Files	Install flake8	2026-08-17T14:11:29.7804601Z env:
-Lint Python Files	Install flake8	2026-08-17T14:11:29.7804901Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
-Lint Python Files	Install flake8	2026-08-17T14:11:29.7805298Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
-Lint Python Files	Install flake8	2026-08-17T14:11:29.7805729Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-Lint Python Files	Install flake8	2026-08-17T14:11:29.7806082Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-Lint Python Files	Install flake8	2026-08-17T14:11:29.7806464Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-Lint Python Files	Install flake8	2026-08-17T14:11:29.7806825Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
-Lint Python Files	Install flake8	2026-08-17T14:11:29.7807136Z ##[endgroup]
-Lint Python Files	Install flake8	2026-08-17T14:11:31.7253400Z Collecting flake8
-Lint Python Files	Install flake8	2026-08-17T14:11:31.8020804Z   Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
-Lint Python Files	Install flake8	2026-08-17T14:11:31.8858016Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8)
-Lint Python Files	Install flake8	2026-08-17T14:11:31.9004884Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
-Lint Python Files	Install flake8	2026-08-17T14:11:31.9249087Z Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8)
-Lint Python Files	Install flake8	2026-08-17T14:11:31.9394609Z   Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
-Lint Python Files	Install flake8	2026-08-17T14:11:32.0462923Z Collecting pyflakes<3.5.0,>=3.4.0 (from flake8)
-Lint Python Files	Install flake8	2026-08-17T14:11:32.0613777Z   Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
-Lint Python Files	Install flake8	2026-08-17T14:11:32.0920195Z Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
-Lint Python Files	Install flake8	2026-08-17T14:11:32.1250176Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
-Lint Python Files	Install flake8	2026-08-17T14:11:32.2498174Z Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
-Lint Python Files	Install flake8	2026-08-17T14:11:32.2788783Z Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
-Lint Python Files	Install flake8	2026-08-17T14:11:32.3947781Z Installing collected packages: pyflakes, pycodestyle, mccabe, flake8
-Lint Python Files	Install flake8	2026-08-17T14:11:32.9509327Z 
-Lint Python Files	Install flake8	2026-08-17T14:11:32.9520089Z Successfully installed flake8-7.3.0 mccabe-0.7.0 pycodestyle-2.14.0 pyflakes-3.4.0
 Lint Python Files	Lint every Python file with flake8	﻿2026-08-17T14:11:33.0028644Z ##[group]Run find . -name "*.py" -not -path "*/node_modules/*" -not -path "*/migrations/*" -exec flake8 --ignore=E501,F401 {} +
 Lint Python Files	Lint every Python file with flake8	2026-08-17T14:11:33.0029384Z ^[[36;1mfind . -name "*.py" -not -path "*/node_modules/*" -not -path "*/migrations/*" -exec flake8 --ignore=E501,F401 {} +^[[0m
 Lint Python Files	Lint every Python file with flake8	2026-08-17T14:11:33.0029792Z ^[[36;1mecho "Linted Python files successfully"^[[0m
@@ -347,24 +68,3 @@ Lint Python Files	Lint every Python file with flake8	2026-08-17T14:11:33.0051141
 Lint Python Files	Lint every Python file with flake8	2026-08-17T14:11:33.0051486Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
 Lint Python Files	Lint every Python file with flake8	2026-08-17T14:11:33.0051820Z ##[endgroup]
 Lint Python Files	Lint every Python file with flake8	2026-08-17T14:11:33.7127961Z Linted Python files successfully
-Lint Python Files	Post Set up Python	﻿2026-08-17T14:11:33.7206120Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Lint Python Files	Post Set up Python	2026-08-17T14:11:33.7207031Z Post job cleanup.
-Lint Python Files	Post Set up Python	2026-08-17T14:11:33.8056508Z (node:2126) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-Lint Python Files	Post Set up Python	2026-08-17T14:11:33.8057136Z (Use `node --trace-deprecation ...` to show where the warning was created)
-Lint Python Files	Post Checkout the repository	﻿2026-08-17T14:11:33.8174946Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.8175936Z Post job cleanup.
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.8777167Z [command]/usr/bin/git version
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.8802039Z git version 2.54.0
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.8825863Z Temporarily overriding HOME='/home/runner/work/_temp/695e9940-7a16-48d4-b1ea-1e3ee2a2a7b8' before making global git config changes
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.8827255Z Adding repository directory to the temporary git global config as a safe directory
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.8830534Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.8855344Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.8876898Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.9026667Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.9042823Z http.https://github.com/.extraheader
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.9048383Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.9069849Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.9204801Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-Lint Python Files	Post Checkout the repository	2026-08-17T14:11:33.9223492Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-Lint Python Files	Complete job	﻿2026-08-17T14:11:33.9462827Z Cleaning up orphan processes
-Lint Python Files	Complete job	2026-08-17T14:11:33.9649282Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
