@@ -2,7 +2,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
 
 [
     {
-        "_id": "6a830dc84210880f792e303f",
+        "_id": "6a8315cc9826461f4585e1c1",
         "id": 1,
         "city": "El Paso",
         "state": "Texas",
@@ -15,7 +15,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3040",
+        "_id": "6a8315cc9826461f4585e1c2",
         "id": 2,
         "city": "Minneapolis",
         "state": "Minnesota",
@@ -28,7 +28,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3041",
+        "_id": "6a8315cc9826461f4585e1c3",
         "id": 3,
         "city": "Birmingham",
         "state": "Alabama",
@@ -41,7 +41,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3042",
+        "_id": "6a8315cc9826461f4585e1c4",
         "id": 4,
         "city": "Dallas",
         "state": "Texas",
@@ -54,7 +54,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3043",
+        "_id": "6a8315cc9826461f4585e1c5",
         "id": 5,
         "city": "Baltimore",
         "state": "Maryland",
@@ -67,7 +67,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3044",
+        "_id": "6a8315cc9826461f4585e1c6",
         "id": 6,
         "city": "Wilkes Barre",
         "state": "Pennsylvania",
@@ -80,7 +80,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3045",
+        "_id": "6a8315cc9826461f4585e1c7",
         "id": 7,
         "city": "Pueblo",
         "state": "Colorado",
@@ -93,7 +93,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3046",
+        "_id": "6a8315cc9826461f4585e1c8",
         "id": 8,
         "city": "Topeka",
         "state": "Kansas",
@@ -106,7 +106,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3047",
+        "_id": "6a8315cc9826461f4585e1c9",
         "id": 9,
         "city": "Dallas",
         "state": "Texas",
@@ -119,7 +119,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3048",
+        "_id": "6a8315cc9826461f4585e1ca",
         "id": 10,
         "city": "Washington",
         "state": "District of Columbia",
@@ -132,7 +132,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3049",
+        "_id": "6a8315cc9826461f4585e1cb",
         "id": 11,
         "city": "Carol Stream",
         "state": "Illinois",
@@ -145,7 +145,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e304a",
+        "_id": "6a8315cc9826461f4585e1cc",
         "id": 12,
         "city": "Silver Spring",
         "state": "Maryland",
@@ -158,7 +158,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e304b",
+        "_id": "6a8315cc9826461f4585e1cd",
         "id": 13,
         "city": "Baltimore",
         "state": "Maryland",
@@ -171,7 +171,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e304c",
+        "_id": "6a8315cc9826461f4585e1ce",
         "id": 14,
         "city": "San Francisco",
         "state": "California",
@@ -184,7 +184,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e304d",
+        "_id": "6a8315cc9826461f4585e1cf",
         "id": 15,
         "city": "San Antonio",
         "state": "Texas",
@@ -197,7 +197,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e304e",
+        "_id": "6a8315cc9826461f4585e1d0",
         "id": 16,
         "city": "El Paso",
         "state": "Texas",
@@ -210,7 +210,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e304f",
+        "_id": "6a8315cc9826461f4585e1d1",
         "id": 17,
         "city": "San Jose",
         "state": "California",
@@ -223,7 +223,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3050",
+        "_id": "6a8315cc9826461f4585e1d2",
         "id": 18,
         "city": "Whittier",
         "state": "California",
@@ -236,7 +236,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3051",
+        "_id": "6a8315cc9826461f4585e1d3",
         "id": 19,
         "city": "Hialeah",
         "state": "Florida",
@@ -249,7 +249,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3052",
+        "_id": "6a8315cc9826461f4585e1d4",
         "id": 20,
         "city": "Detroit",
         "state": "Michigan",
@@ -262,7 +262,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3053",
+        "_id": "6a8315cc9826461f4585e1d5",
         "id": 21,
         "city": "San Francisco",
         "state": "California",
@@ -275,7 +275,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3054",
+        "_id": "6a8315cc9826461f4585e1d6",
         "id": 22,
         "city": "Fort Lauderdale",
         "state": "Florida",
@@ -288,7 +288,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3055",
+        "_id": "6a8315cc9826461f4585e1d7",
         "id": 23,
         "city": "Des Moines",
         "state": "Iowa",
@@ -301,7 +301,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3056",
+        "_id": "6a8315cc9826461f4585e1d8",
         "id": 24,
         "city": "Utica",
         "state": "New York",
@@ -314,7 +314,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3057",
+        "_id": "6a8315cc9826461f4585e1d9",
         "id": 25,
         "city": "Washington",
         "state": "District of Columbia",
@@ -327,7 +327,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3058",
+        "_id": "6a8315cc9826461f4585e1da",
         "id": 26,
         "city": "Pittsburgh",
         "state": "Pennsylvania",
@@ -340,7 +340,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3059",
+        "_id": "6a8315cc9826461f4585e1db",
         "id": 27,
         "city": "San Antonio",
         "state": "Texas",
@@ -353,7 +353,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e305a",
+        "_id": "6a8315cc9826461f4585e1dc",
         "id": 28,
         "city": "Hialeah",
         "state": "Florida",
@@ -366,7 +366,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e305b",
+        "_id": "6a8315cc9826461f4585e1dd",
         "id": 29,
         "city": "San Francisco",
         "state": "California",
@@ -379,7 +379,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e305c",
+        "_id": "6a8315cc9826461f4585e1de",
         "id": 30,
         "city": "Houston",
         "state": "Texas",
@@ -392,7 +392,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e305d",
+        "_id": "6a8315cc9826461f4585e1df",
         "id": 31,
         "city": "New York City",
         "state": "New York",
@@ -405,7 +405,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e305e",
+        "_id": "6a8315cc9826461f4585e1e0",
         "id": 32,
         "city": "Wilkes Barre",
         "state": "Pennsylvania",
@@ -418,7 +418,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e305f",
+        "_id": "6a8315cc9826461f4585e1e1",
         "id": 33,
         "city": "Des Moines",
         "state": "Iowa",
@@ -431,7 +431,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3060",
+        "_id": "6a8315cc9826461f4585e1e2",
         "id": 34,
         "city": "Silver Spring",
         "state": "Maryland",
@@ -444,7 +444,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3061",
+        "_id": "6a8315cc9826461f4585e1e3",
         "id": 35,
         "city": "Seattle",
         "state": "Washington",
@@ -457,7 +457,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3062",
+        "_id": "6a8315cc9826461f4585e1e4",
         "id": 36,
         "city": "Vienna",
         "state": "Virginia",
@@ -470,7 +470,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3063",
+        "_id": "6a8315cc9826461f4585e1e5",
         "id": 37,
         "city": "Detroit",
         "state": "Michigan",
@@ -483,7 +483,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3064",
+        "_id": "6a8315cc9826461f4585e1e6",
         "id": 38,
         "city": "Dallas",
         "state": "Texas",
@@ -496,7 +496,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3065",
+        "_id": "6a8315cc9826461f4585e1e7",
         "id": 39,
         "city": "Fresno",
         "state": "California",
@@ -509,7 +509,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3066",
+        "_id": "6a8315cc9826461f4585e1e8",
         "id": 40,
         "city": "Merrifield",
         "state": "Virginia",
@@ -522,7 +522,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3067",
+        "_id": "6a8315cc9826461f4585e1e9",
         "id": 41,
         "city": "Baltimore",
         "state": "Maryland",
@@ -535,7 +535,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3068",
+        "_id": "6a8315cc9826461f4585e1ea",
         "id": 42,
         "city": "Jersey City",
         "state": "New Jersey",
@@ -548,7 +548,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3069",
+        "_id": "6a8315cc9826461f4585e1eb",
         "id": 43,
         "city": "Atlanta",
         "state": "Georgia",
@@ -561,7 +561,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e306a",
+        "_id": "6a8315cc9826461f4585e1ec",
         "id": 44,
         "city": "Roanoke",
         "state": "Virginia",
@@ -574,7 +574,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e306b",
+        "_id": "6a8315cc9826461f4585e1ed",
         "id": 45,
         "city": "Norfolk",
         "state": "Virginia",
@@ -587,7 +587,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e306c",
+        "_id": "6a8315cc9826461f4585e1ee",
         "id": 46,
         "city": "New Orleans",
         "state": "Louisiana",
@@ -600,7 +600,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e306d",
+        "_id": "6a8315cc9826461f4585e1ef",
         "id": 47,
         "city": "Stamford",
         "state": "Connecticut",
@@ -613,7 +613,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e306e",
+        "_id": "6a8315cc9826461f4585e1f0",
         "id": 48,
         "city": "Tucson",
         "state": "Arizona",
@@ -626,7 +626,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e306f",
+        "_id": "6a8315cc9826461f4585e1f1",
         "id": 49,
         "city": "Athens",
         "state": "Georgia",
@@ -639,7 +639,7 @@ $ curl -s http://localhost:3030/fetchDealers | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3070",
+        "_id": "6a8315cc9826461f4585e1f2",
         "id": 50,
         "city": "Atlanta",
         "state": "Georgia",
