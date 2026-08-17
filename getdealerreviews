@@ -2,7 +2,7 @@ $ curl -s http://localhost:3030/fetchReviews/dealer/15 | python -m json.tool
 
 [
     {
-        "_id": "6a830dc84210880f792e3072",
+        "_id": "6a8315cc9826461f4585e18e",
         "id": 1,
         "name": "Berkly Shepley",
         "dealership": 15,
@@ -15,7 +15,7 @@ $ curl -s http://localhost:3030/fetchReviews/dealer/15 | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3096",
+        "_id": "6a8315cc9826461f4585e1b2",
         "id": 37,
         "name": "Albrecht Collen",
         "dealership": 15,
@@ -28,7 +28,7 @@ $ curl -s http://localhost:3030/fetchReviews/dealer/15 | python -m json.tool
         "__v": 0
     },
     {
-        "_id": "6a830dc84210880f792e3097",
+        "_id": "6a8315cc9826461f4585e1b3",
         "id": 38,
         "name": "Prudi Minchi",
         "dealership": 15,
@@ -38,6 +38,19 @@ $ curl -s http://localhost:3030/fetchReviews/dealer/15 | python -m json.tool
         "car_make": "Saturn",
         "car_model": "L-Series",
         "car_year": 2001,
+        "__v": 0
+    },
+    {
+        "_id": "6a8316079826461f4585e1f7",
+        "id": 51,
+        "name": "hazhar",
+        "dealership": 15,
+        "review": "Fantastic dealership and excellent service",
+        "purchase": true,
+        "purchase_date": "2026-07-15",
+        "car_make": "Toyota",
+        "car_model": "Camry",
+        "car_year": 2022,
         "__v": 0
     }
 ]
