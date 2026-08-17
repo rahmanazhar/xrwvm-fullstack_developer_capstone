@@ -2,13 +2,19 @@ $ git push origin main
 To https://github.com/rahmanazhar/xrwvm-fullstack_developer_capstone.git
    6bf6c0a..bc0ee27  main -> main
 
-$ gh run list --limit 1
+$ gh run list
+completed	success	docs: rebuild CICD to show the workflow steps clearly	Lint Code	main	push	32040346652	15s	2026-08-17T14:49:06Z
 completed	success	docs: regenerate Express dealer artifacts against current seeded data	Lint Code	main	push	32039901520	16s	2026-08-17T14:41:13Z
+completed	success	docs: refresh getdealerreviews to include the posted review	Lint Code	main	push	32039734886	14s	2026-08-17T14:38:17Z
+completed	success	docs: regenerate loginuser and logoutuser with a clean cookie jar path	Lint Code	main	push	32039562129	14s	2026-08-17T14:35:15Z
+completed	success	docs: regenerate django_server from a clean verified run	Lint Code	main	push	32039173728	14s	2026-08-17T14:28:45Z
+completed	success	docs: add CICD run log, submission index and deployment URL placeholder	Lint Code	main	push	32038335762	18s	2026-08-17T14:14:19Z
+completed	success	feat: add CI workflow, deployment manifests and rubric screenshots	Lint Code	main	push	32038159884	19s	2026-08-17T14:11:24Z
 
 $ gh run view 32038159884
 
 ✓ main Lint Code · 32038159884
-Triggered via push about 37 minutes ago
+Triggered via push about 38 minutes ago
 
 JOBS
 ✓ Lint JS Files in 14s (ID 95412569651)
@@ -25,7 +31,7 @@ Lint Python Files: .github#2
 For more information about a job, try: gh run view --job=<job-id>
 View this run on GitHub: https://github.com/rahmanazhar/xrwvm-fullstack_developer_capstone/actions/runs/32038159884
 
-$ gh api repos/rahmanazhar/xrwvm-fullstack_developer_capstone/actions/runs/32038159884/jobs --jq '<steps>'
+$ gh api repos/rahmanazhar/xrwvm-fullstack_developer_capstone/actions/runs/32038159884/jobs --jq '<per-step status>'
 
 JOB: Lint JS Files  [success]  2026-08-17T14:11:28Z -> 2026-08-17T14:11:42Z
    step 1. Set up job  [success]
