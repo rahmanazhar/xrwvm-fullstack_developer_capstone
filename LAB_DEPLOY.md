@@ -58,13 +58,31 @@ If `$SN_ICR_NAMESPACE` is empty, stop — nothing below will push correctly.
 
 ## Step 1 — IBM Cloud context
 
-`ibmcloud ce` fails with *"No resource group targeted"* until this is set.
+`ibmcloud ce` fails with *"No resource group targeted"* until a group is
+targeted. **Look the name up rather than assuming it** — lab accounts often have
+no group called `Default`, and no group flagged as the default, so it must be
+passed explicitly:
 
 ```bash
-ibmcloud target -g Default
+ibmcloud resource groups
+```
+
+```
+Name         ID                                 Default Group   State
+production   d9bc65f89412482cb207f045f74ba87f   false           ACTIVE
+```
+
+Then target that name (it was `production` on this account, not `Default`):
+
+```bash
+ibmcloud target -g production
 ibmcloud ce project create --name sentianalyzer    # skip if it exists
 ibmcloud ce project select --name sentianalyzer
 ```
+
+Note the error message's own suggestion, `ibmcloud target -g
+RESOURCE_GROUP_NAME`, is a placeholder — passing it literally fails with
+*"Could not get resource group"*.
 
 ## Step 2 — Sentiment analyzer to Code Engine
 
