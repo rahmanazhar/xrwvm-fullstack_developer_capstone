@@ -1,7 +1,7 @@
-$ curl -i -s -X GET http://localhost:8000/djangoapp/logout -b /c/Users/Rahman/AppData/Local/Temp/claude/C--Users-Rahman/081bbee2-1415-4f99-8651-cc8e31cf2187/scratchpad/cookies.txt
+$ curl -i -X GET http://localhost:8000/djangoapp/logout -b cookies.txt
 
 HTTP/1.1 200 OK
-Date: Mon, 17 Aug 2026 13:35:09 GMT
+Date: Mon, 17 Aug 2026 14:34:57 GMT
 Server: WSGIServer/0.2 CPython/3.10.11
 Content-Type: application/json
 X-Frame-Options: DENY
