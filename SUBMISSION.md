@@ -35,10 +35,10 @@ Nothing here is hand-written to look like program output.
 | 22 | 2 | Review after submit | `added_review.png` |
 | 23 | 3 | CI/CD run output | [BLOB/CICD](CICD) |
 | 24 | 1 | Deployment URL | [BLOB/deploymentURL](deploymentURL) — **done**, deployed to IBM Kubernetes |
-| 25 | 2 | Deployed landing page | `deployed_landingpage.png` — **lab** |
-| 26 | 2 | Deployed logged-in page | `deployed_loggedin.png` — **lab** |
-| 27 | 2 | Deployed dealer detail | `deployed_dealer_detail.png` — **lab** |
-| 28 | 2 | Deployed added review | `deployed_add_review.png` — **lab** |
+| 25 | 2 | Deployed landing page | `deployed_landingpage.png` |
+| 26 | 2 | Deployed logged-in page | `deployed_loggedin.png` |
+| 27 | 2 | Deployed dealer detail | `deployed_dealer_detail.png` |
+| 28 | 2 | Deployed added review | `deployed_add_review.png` |
 
 ## Option 2 — Peer-graded (50 points)
 
@@ -60,10 +60,35 @@ Same repo. Extra screenshots captured for the peer rubric's different asks:
 | 16 | Sentiment analyzer in browser | `sentiment_analyzer.png` |
 | 23 | CI/CD success on GitHub | `cicd_github.png` |
 
-## Still outstanding — 9 points
+## Deployment — complete
 
-Tasks 24–28 require the Skills Network lab. Follow [LAB_DEPLOY.md](LAB_DEPLOY.md),
-then commit `deploymentURL` and the four `deployed_*.png` files.
+All 28 tasks are done. The application is deployed to the lab Kubernetes cluster:
+
+```
+https://rahmanprojec-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/
+```
+
+Four services, verified live end to end:
+
+| Component | Where |
+|---|---|
+| Django + React | Kubernetes `dealership` deployment |
+| Express API | Kubernetes `dealership-api` |
+| MongoDB | Kubernetes `mongo-db` |
+| Sentiment analyzer | Code Engine `sentianalyzer` |
+
+Confirmed from outside the cluster: all SPA routes return 200, `get_dealers`
+returns 50 dealers through Express and Mongo, `get_cars` returns 18 models, and
+the review posted through the deployed UI came back scored **positive** by the
+Code Engine analyzer.
+
+Two things to know about this deployment:
+
+- **The URL is tied to the lab session.** It stops working when the lab expires,
+  which is expected — the screenshots are the durable evidence.
+- **Restarting the `dealership-api` pod wipes posted reviews**, because `app.js`
+  re-seeds its collections on every start. Restarting the `dealership` pod wipes
+  the SQLite users, so re-run `migrate` and re-create users after any rollout.
 
 ## Reference values used
 
