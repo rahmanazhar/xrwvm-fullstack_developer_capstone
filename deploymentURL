@@ -1,10 +1,1 @@
-NOT YET FILLED IN - replace this whole file with your deployment URL.
-
-This is the one artifact that cannot be produced outside the Skills Network lab.
-Follow LAB_DEPLOY.md, then replace the contents of this file with the single
-deployment URL, for example:
-
-  https://dealership.<your-cluster>.<region>.containers.appdomain.cloud/
-
-The URL written here must match the address bar in deployed_landingpage,
-deployed_loggedin, deployed_dealer_detail and deployed_add_review.
+https://rahmanprojec-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/

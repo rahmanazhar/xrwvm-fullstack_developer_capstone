@@ -34,7 +34,7 @@ Nothing here is hand-written to look like program output.
 | 21 | 1 | Review form before submit | `dealership_review_submission.png` |
 | 22 | 2 | Review after submit | `added_review.png` |
 | 23 | 3 | CI/CD run output | [BLOB/CICD](CICD) |
-| 24 | 1 | Deployment URL | [BLOB/deploymentURL](deploymentURL) — **you must fill this in** |
+| 24 | 1 | Deployment URL | [BLOB/deploymentURL](deploymentURL) — **done**, deployed to IBM Kubernetes |
 | 25 | 2 | Deployed landing page | `deployed_landingpage.png` — **lab** |
 | 26 | 2 | Deployed logged-in page | `deployed_loggedin.png` — **lab** |
 | 27 | 2 | Deployed dealer detail | `deployed_dealer_detail.png` — **lab** |
