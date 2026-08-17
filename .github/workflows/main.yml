@@ -1,0 +1,47 @@
+name: 'Lint Code'
+
+on: [push, pull_request]
+
+jobs:
+  lint_python:
+    name: Lint Python Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install flake8
+        run: pip install flake8
+
+      - name: Lint every Python file with flake8
+        run: |
+          find . -name "*.py" -not -path "*/node_modules/*" -not -path "*/migrations/*" -exec flake8 --ignore=E501,F401 {} +
+          echo "Linted Python files successfully"
+
+  lint_js:
+    name: Lint JS Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install jshint
+        run: npm install jshint --global
+
+      # Only the Express service is plain Node JavaScript. The React sources
+      # under frontend/src are JSX, which jshint cannot parse, and frontend
+      # build output is generated - both are excluded deliberately.
+      - name: Lint the Express service with jshint
+        run: |
+          jshint --config .jshintrc server/database/*.js
+          echo "Linted JS files successfully"

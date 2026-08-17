@@ -31,6 +31,19 @@ DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000']
 
+# A deployment's public hostname is not known when this file is written, so
+# allow extra hosts and CSRF origins to be supplied through the environment
+# (comma separated). See LAB_DEPLOY.md.
+_extra_hosts = os.getenv('DJANGO_ALLOWED_HOSTS', '')
+if _extra_hosts:
+    ALLOWED_HOSTS += [h.strip() for h in _extra_hosts.split(',') if h.strip()]
+
+_extra_origins = os.getenv('DJANGO_CSRF_TRUSTED_ORIGINS', '')
+if _extra_origins:
+    CSRF_TRUSTED_ORIGINS += [
+        o.strip() for o in _extra_origins.split(',') if o.strip()
+    ]
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
 }
@@ -139,7 +152,11 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
+    # frontend/static holds style.css, bootstrap.min.css and the page images
+    # referenced as /static/... by Home.html, About.html and Contact.html.
+    # Listing it in TEMPLATES['DIRS'] only makes those pages findable as
+    # templates - the staticfiles finders read this setting instead.
+    os.path.join(BASE_DIR, 'frontend/static'),
     os.path.join(BASE_DIR, 'frontend/build'),
     os.path.join(BASE_DIR, 'frontend/build/static'),
 ]
-

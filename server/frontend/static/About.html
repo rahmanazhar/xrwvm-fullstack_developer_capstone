@@ -6,6 +6,21 @@
   <title>About Us | Best Cars Dealerships</title>
   <link rel="stylesheet" href="/static/bootstrap.min.css">
   <link rel="stylesheet" href="/static/style.css">
+  <style>
+    /* The portraits are 128px at source, so render them at their native
+       size as circular avatars rather than stretching them card-width. */
+    .team-photo {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 24px auto 8px auto;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+    .card-body { text-align: center; }
+    .card-body .title { font-size: larger; }
+  </style>
 </head>
 <div>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
@@ -49,7 +64,7 @@
       </div>
       <div style="display: flex;flex-direction: row; margin:auto">
       <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait of Amara Nwosu">
+        <img class="team-photo" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait of Amara Nwosu">
         <div class="card-body">
           <p class="title"><strong>Amara Nwosu</strong></p>
           <p><em>Founder &amp; Chief Executive Officer</em></p>
@@ -59,7 +74,7 @@
       </div>
 
       <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait of Diego Salvatierra">
+        <img class="team-photo" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait of Diego Salvatierra">
         <div class="card-body">
           <p class="title"><strong>Diego Salvatierra</strong></p>
           <p><em>Head of Dealer Operations</em></p>
@@ -69,7 +84,7 @@
       </div>
 
       <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Portrait of Priya Raghunathan">
+        <img class="team-photo" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Portrait of Priya Raghunathan">
         <div class="card-body">
           <p class="title"><strong>Priya Raghunathan</strong></p>
           <p><em>Lead Software Engineer</em></p>

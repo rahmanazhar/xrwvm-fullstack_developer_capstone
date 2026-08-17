@@ -1,0 +1,257 @@
+$ cd server
+$ python -m venv .venv
+$ .venv/Scripts/pip install -r requirements.txt
+$ .venv/Scripts/pip freeze
+asgiref==3.12.1
+blinker==1.9.0
+certifi==2026.7.22
+charset-normalizer==3.5.1
+click==8.4.2
+colorama==0.4.6
+defusedxml==0.7.1
+Django==5.2.17
+flake8==7.3.0
+Flask==3.1.3
+gunicorn==26.0.0
+idna==3.18
+itsdangerous==2.2.0
+Jinja2==3.1.6
+joblib==1.5.3
+MarkupSafe==3.0.3
+mccabe==0.7.0
+nltk==3.10.3
+packaging==26.3
+pillow==12.3.0
+pycodestyle==2.14.0
+pyflakes==3.4.0
+python-dotenv==1.2.3
+regex==2026.7.19
+requests==2.34.2
+sqlparse==0.6.0
+tqdm==4.70.0
+typing_extensions==4.16.0
+tzdata==2026.3
+urllib3==2.7.0
+Werkzeug==3.1.8
+
+$ .venv/Scripts/python manage.py migrate
+$ .venv/Scripts/python manage.py createsuperuser --username root
+Superuser created successfully.
+
+$ .venv/Scripts/python manage.py runserver
+
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 17, 2026 - 21:37:12
+Django version 5.2.17, using settings 'djangoproj.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+[17/Aug/2026 21:38:44] "GET / HTTP/1.1" 200 3223
+[17/Aug/2026 21:38:44] "GET /static/bootstrap.min.css HTTP/1.1" 404 1978
+[17/Aug/2026 21:38:44] "GET /static/style.css HTTP/1.1" 404 1954
+[17/Aug/2026 21:38:44] "GET /static/car_dealership.jpg HTTP/1.1" 404 1981
+Not Found: /favicon.ico
+[17/Aug/2026 21:38:45] "GET /favicon.ico HTTP/1.1" 404 3776
+C:\Users\Rahman\xrwvm-fullstack_developer_capstone\server\djangoproj\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 17, 2026 - 21:41:43
+Django version 5.2.17, using settings 'djangoproj.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+[17/Aug/2026 21:41:55] "GET /static/style.css HTTP/1.1" 200 2044
+[17/Aug/2026 21:41:55] "GET /static/bootstrap.min.css HTTP/1.1" 200 155806
+[17/Aug/2026 21:41:55] "GET /static/car_dealership.jpg HTTP/1.1" 200 263696
+[17/Aug/2026 21:41:56] "GET /static/contactus.png HTTP/1.1" 200 29347
+[17/Aug/2026 21:41:56] "GET /static/person.png HTTP/1.1" 200 138137
+[17/Aug/2026 21:42:04] "GET /about HTTP/1.1" 301 0
+[17/Aug/2026 21:42:04] "GET /about/ HTTP/1.1" 200 4224
+[17/Aug/2026 21:42:04] "GET /static/bootstrap.min.css HTTP/1.1" 200 155806
+[17/Aug/2026 21:42:04] "GET /static/style.css HTTP/1.1" 200 2044
+[17/Aug/2026 21:44:05] "GET /about/ HTTP/1.1" 200 4692
+[17/Aug/2026 21:45:51] "GET /contact/ HTTP/1.1" 200 3446
+[17/Aug/2026 21:45:51] "GET /static/contactus.png HTTP/1.1" 200 29347
+[17/Aug/2026 21:45:51] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[17/Aug/2026 21:45:51] "GET /static/style.css HTTP/1.1" 304 0
+[17/Aug/2026 21:48:41] "GET /admin/ HTTP/1.1" 302 0
+[17/Aug/2026 21:48:41] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+[17/Aug/2026 21:48:41] "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+[17/Aug/2026 21:48:41] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+[17/Aug/2026 21:48:41] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+[17/Aug/2026 21:48:41] "GET /static/admin/css/login.css HTTP/1.1" 200 951
+[17/Aug/2026 21:48:41] "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+[17/Aug/2026 21:48:42] "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+[17/Aug/2026 21:48:42] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+[17/Aug/2026 21:48:59] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[17/Aug/2026 21:48:59] "GET /admin/ HTTP/1.1" 200 7808
+[17/Aug/2026 21:48:59] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+[17/Aug/2026 21:48:59] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[17/Aug/2026 21:48:59] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[17/Aug/2026 21:51:44] "GET /admin/djangoapp/carmake/ HTTP/1.1" 200 12589
+[17/Aug/2026 21:51:44] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[17/Aug/2026 21:51:44] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[17/Aug/2026 21:51:44] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[17/Aug/2026 21:51:44] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[17/Aug/2026 21:51:44] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+[17/Aug/2026 21:51:44] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[17/Aug/2026 21:51:44] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[17/Aug/2026 21:51:44] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[17/Aug/2026 21:51:44] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+[17/Aug/2026 21:51:44] "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+[17/Aug/2026 21:51:44] "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+[17/Aug/2026 21:51:44] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+[17/Aug/2026 21:51:44] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[17/Aug/2026 21:51:44] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+[17/Aug/2026 21:51:44] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[17/Aug/2026 21:51:44] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[17/Aug/2026 21:51:44] "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+[17/Aug/2026 21:51:44] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+[17/Aug/2026 21:51:44] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[17/Aug/2026 21:52:13] "GET /admin/djangoapp/carmodel/ HTTP/1.1" 200 19155
+[17/Aug/2026 21:52:13] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[17/Aug/2026 21:52:13] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+[17/Aug/2026 21:52:48] "POST /admin/logout/ HTTP/1.1" 200 3568
+[17/Aug/2026 21:53:26] "GET /dealers HTTP/1.1" 301 0
+[17/Aug/2026 21:53:26] "GET /dealers/ HTTP/1.1" 200 652
+[17/Aug/2026 21:53:26] "GET /static/js/main.134335e5.js HTTP/1.1" 200 176285
+[17/Aug/2026 21:53:26] "GET /static/css/main.d9716fdc.css HTTP/1.1" 200 157408
+GET from http://localhost:3030/fetchDealers
+[17/Aug/2026 21:53:26] "GET /djangoapp/get_dealers HTTP/1.1" 200 12500
+Not Found: /manifest.json
+[17/Aug/2026 21:53:26] "GET /manifest.json HTTP/1.1" 404 3782
+[17/Aug/2026 21:54:42] "GET /login HTTP/1.1" 301 0
+[17/Aug/2026 21:54:42] "GET /login/ HTTP/1.1" 200 652
+Not Found: /manifest.json
+[17/Aug/2026 21:54:42] "GET /manifest.json HTTP/1.1" 404 3782
+[17/Aug/2026 21:55:05] "GET /register HTTP/1.1" 301 0
+[17/Aug/2026 21:55:06] "GET /register/ HTTP/1.1" 200 652
+Not Found: /manifest.json
+[17/Aug/2026 21:55:06] "GET /manifest.json HTTP/1.1" 404 3782
+[17/Aug/2026 21:55:06] "GET /static/media/person.7419e33fa2e0a06c620d.png HTTP/1.1" 200 138137
+[17/Aug/2026 21:55:06] "GET /static/media/email.66cf52f2342f17f1f491.png HTTP/1.1" 200 159387
+[17/Aug/2026 21:55:06] "GET /static/media/password.adcd6e686448d893855c.png HTTP/1.1" 200 222515
+[17/Aug/2026 21:55:37] "GET /login/ HTTP/1.1" 200 652
+Not Found: /manifest.json
+[17/Aug/2026 21:55:37] "GET /manifest.json HTTP/1.1" 404 3782
+[17/Aug/2026 21:55:59] "POST /djangoapp/login HTTP/1.1" 200 49
+[17/Aug/2026 21:55:59] "GET / HTTP/1.1" 200 3223
+[17/Aug/2026 21:55:59] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[17/Aug/2026 21:55:59] "GET /static/style.css HTTP/1.1" 304 0
+[17/Aug/2026 21:55:59] "GET /static/car_dealership.jpg HTTP/1.1" 200 263696
+[17/Aug/2026 21:56:20] "GET /dealers/ HTTP/1.1" 200 652
+[17/Aug/2026 21:56:20] "GET /static/js/main.134335e5.js HTTP/1.1" 304 0
+[17/Aug/2026 21:56:20] "GET /static/css/main.d9716fdc.css HTTP/1.1" 304 0
+GET from http://localhost:3030/fetchDealers
+Not Found: /manifest.json
+[17/Aug/2026 21:56:20] "GET /manifest.json HTTP/1.1" 404 3782
+[17/Aug/2026 21:56:20] "GET /djangoapp/get_dealers HTTP/1.1" 200 12500
+[17/Aug/2026 21:56:20] "GET /static/media/reviewicon.7d906bac2946fa1dc23d.png HTTP/1.1" 200 29125
+GET from http://localhost:3030/fetchDealers/Texas
+[17/Aug/2026 21:57:14] "GET /djangoapp/get_dealers/Texas HTTP/1.1" 200 1981
+[17/Aug/2026 21:57:57] "GET /dealer/15 HTTP/1.1" 200 652
+GET from http://localhost:3030/fetchDealer/15GET from http://localhost:3030/fetchReviews/dealer/15
+
+Not Found: /manifest.json
+[17/Aug/2026 21:57:57] "GET /manifest.json HTTP/1.1" 404 3782
+[17/Aug/2026 21:57:57] "GET /djangoapp/dealer/15 HTTP/1.1" 200 278
+[17/Aug/2026 21:57:57] "GET /static/media/reviewbutton.d450bab8bc6468d9fb28.png HTTP/1.1" 200 62137
+{'sentiment': 'neutral'}
+{'sentiment': 'positive'}
+{'sentiment': 'neutral'}
+[17/Aug/2026 21:58:03] "GET /djangoapp/reviews/dealer/15 HTTP/1.1" 200 865
+[17/Aug/2026 21:58:03] "GET /static/media/positive.4aa3d05c6e13ba380a17.png HTTP/1.1" 200 34037
+[17/Aug/2026 21:58:03] "GET /static/media/neutral.84adb1c83d738945f381.png HTTP/1.1" 200 29329
+[17/Aug/2026 21:58:47] "GET /postreview/15 HTTP/1.1" 200 652
+GET from http://localhost:3030/fetchDealer/15
+Not Found: /manifest.json
+6
+[17/Aug/2026 21:58:47] "GET /manifest.json HTTP/1.1" 404 3782
+[17/Aug/2026 21:58:47] "GET /djangoapp/get_cars HTTP/1.1" 200 808
+[17/Aug/2026 21:58:47] "GET /djangoapp/dealer/15 HTTP/1.1" 200 278
+{'id': 51, 'name': 'hazhar', 'dealership': 15, 'review': 'Absolutely fantastic service from start to finish. The team was patient, completely transparent about pricing, and delivered the car exactly when they promised. Best dealership experience I have had.', 'purchase': True, 'purchase_date': '2026-07-15', 'car_make': 'Toyota', 'car_model': 'Camry', 'car_year': 2022, '_id': '6a8313f14210880f792e30c1', '__v': 0}
+[17/Aug/2026 22:00:17] "POST /djangoapp/add_review HTTP/1.1" 200 15
+[17/Aug/2026 22:00:17] "GET /dealer/15 HTTP/1.1" 200 652
+[17/Aug/2026 22:00:17] "GET /static/js/main.134335e5.js HTTP/1.1" 304 0
+[17/Aug/2026 22:00:17] "GET /static/css/main.d9716fdc.css HTTP/1.1" 304 0
+GET from http://localhost:3030/fetchDealer/15GET from http://localhost:3030/fetchReviews/dealer/15
+
+Not Found: /manifest.json
+[17/Aug/2026 22:00:17] "GET /manifest.json HTTP/1.1" 404 3782
+[17/Aug/2026 22:00:17] "GET /djangoapp/dealer/15 HTTP/1.1" 200 278
+{'sentiment': 'neutral'}
+{'sentiment': 'positive'}
+{'sentiment': 'neutral'}
+{'sentiment': 'neutral'}
+[17/Aug/2026 22:00:25] "GET /djangoapp/reviews/dealer/15 HTTP/1.1" 200 1306
+[17/Aug/2026 22:02:09] "GET /postreview/15 HTTP/1.1" 200 652
+GET from http://localhost:3030/fetchDealer/15
+6Not Found: /manifest.json
+
+[17/Aug/2026 22:02:09] "GET /manifest.json HTTP/1.1" 404 3782
+[17/Aug/2026 22:02:09] "GET /djangoapp/get_cars HTTP/1.1" 200 808
+[17/Aug/2026 22:02:09] "GET /djangoapp/dealer/15 HTTP/1.1" 200 278
+{'id': 51, 'name': 'hazhar', 'dealership': 15, 'review': 'Fantastic dealership and excellent service', 'purchase': True, 'purchase_date': '2026-07-15', 'car_make': 'Toyota', 'car_model': 'Camry', 'car_year': 2022, '_id': '6a8314934210880f792e30c7', '__v': 0}
+[17/Aug/2026 22:02:59] "POST /djangoapp/add_review HTTP/1.1" 200 15
+[17/Aug/2026 22:02:59] "GET /dealer/15 HTTP/1.1" 200 652
+GET from http://localhost:3030/fetchDealer/15GET from http://localhost:3030/fetchReviews/dealer/15
+
+Not Found: /manifest.json
+[17/Aug/2026 22:03:00] "GET /manifest.json HTTP/1.1" 404 3782
+[17/Aug/2026 22:03:00] "GET /djangoapp/dealer/15 HTTP/1.1" 200 278
+[17/Aug/2026 22:03:00] "GET /static/media/reviewbutton.d450bab8bc6468d9fb28.png HTTP/1.1" 304 0
+{'sentiment': 'neutral'}
+{'sentiment': 'positive'}
+{'sentiment': 'neutral'}
+{'sentiment': 'positive'}
+[17/Aug/2026 22:03:08] "GET /djangoapp/reviews/dealer/15 HTTP/1.1" 200 1150
+[17/Aug/2026 22:03:08] "GET /static/media/positive.4aa3d05c6e13ba380a17.png HTTP/1.1" 304 0
+[17/Aug/2026 22:03:08] "GET /static/media/neutral.84adb1c83d738945f381.png HTTP/1.1" 304 0
+[17/Aug/2026 22:04:01] "GET / HTTP/1.1" 200 3223
+[17/Aug/2026 22:04:01] "GET /static/style.css HTTP/1.1" 304 0
+[17/Aug/2026 22:04:01] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[17/Aug/2026 22:04:01] "GET /static/car_dealership.jpg HTTP/1.1" 304 0
+[17/Aug/2026 22:04:10] "GET /djangoapp/logout HTTP/1.1" 200 16
+[17/Aug/2026 22:04:50] "GET / HTTP/1.1" 200 3223
+C:\Users\Rahman\xrwvm-fullstack_developer_capstone\server\djangoproj\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 17, 2026 - 22:05:58
+Django version 5.2.17, using settings 'djangoproj.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+C:\Users\Rahman\xrwvm-fullstack_developer_capstone\server\djangoproj\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 17, 2026 - 22:08:16
+Django version 5.2.17, using settings 'djangoproj.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+[17/Aug/2026 22:09:10] "POST /djangoapp/login HTTP/1.1" 200 49
+{'id': 51, 'name': 'hazhar', 'dealership': 15, 'review': 'Fantastic dealership and excellent service', 'purchase': True, 'purchase_date': '2026-07-15', 'car_make': 'Toyota', 'car_model': 'Camry', 'car_year': 2022, '_id': '6a8316079826461f4585e1f7', '__v': 0}
+[17/Aug/2026 22:09:11] "POST /djangoapp/add_review HTTP/1.1" 200 15
+GET from http://localhost:3030/fetchReviews/dealer/15
+{'sentiment': 'neutral'}
+{'sentiment': 'positive'}
+{'sentiment': 'neutral'}
+{'sentiment': 'positive'}
+[17/Aug/2026 22:09:19] "GET /djangoapp/reviews/dealer/15 HTTP/1.1" 200 1150

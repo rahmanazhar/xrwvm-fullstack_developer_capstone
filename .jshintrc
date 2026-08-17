@@ -1,0 +1,15 @@
+{
+  "esversion": 11,
+  "node": true,
+  "undef": true,
+  "unused": false,
+  "asi": true,
+  "sub": true,
+  "globals": {
+    "require": false,
+    "module": false,
+    "process": false,
+    "console": false,
+    "__dirname": false
+  }
+}

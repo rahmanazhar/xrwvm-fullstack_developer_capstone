@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dealership
+  labels:
+    app: dealership
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dealership
+  template:
+    metadata:
+      labels:
+        app: dealership
+    spec:
+      containers:
+        - name: dealership
+          # Replace <NAMESPACE> with your IBM Container Registry namespace.
+          image: us.icr.io/<NAMESPACE>/dealership:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          env:
+            # The Express/Mongo service, reachable in-cluster by service name.
+            - name: backend_url
+              value: "http://mongo-express-service:3030"
+            # The Code Engine URL of the sentiment analyzer. Must end with a
+            # trailing slash - restapis.py concatenates "analyze/<text>" onto it.
+            - name: sentiment_analyzer_url
+              value: "https://sentiment-analyzer.REPLACE_ME.codeengine.appdomain.cloud/"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dealership
+  labels:
+    app: dealership
+spec:
+  type: NodePort
+  selector:
+    app: dealership
+  ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
