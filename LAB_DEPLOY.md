@@ -76,9 +76,30 @@ Then target that name (it was `production` on this account, not `Default`):
 
 ```bash
 ibmcloud target -g production
-ibmcloud ce project create --name sentianalyzer    # skip if it exists
-ibmcloud ce project select --name sentianalyzer
 ```
+
+**Do not create a Code Engine project.** The lab provisions one for you and the
+lab ServiceId is not authorized to create more — `ce project create` fails with
+*"This action is forbidden."* List what already exists and select it:
+
+```bash
+ibmcloud ce project list
+```
+
+```
+Name                                ID                                    Status  Region
+Code Engine - sn-labs-rahmanprojec  d4a867f1-3a73-4690-addd-04f2ed37b5f7  active  us-south
+```
+
+The provisioned name contains spaces, so select it by ID:
+
+```bash
+ibmcloud ce project select --id <the-id-from-the-list>
+ibmcloud ce project current
+```
+
+Until a project is selected, every `ce application` call fails with *"No project
+selected."*
 
 Note the error message's own suggestion, `ibmcloud target -g
 RESOURCE_GROUP_NAME`, is a placeholder — passing it literally fails with
