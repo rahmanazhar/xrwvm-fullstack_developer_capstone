@@ -1,53 +1,77 @@
 # Deployment Runbook (Skills Network Lab)
 
-Everything in Tasks 1–23 was built and verified locally. This runbook covers the
-five artifacts that can only be produced from inside the IBM Cloud lab:
-`deploymentURL`, `deployed_landingpage`, `deployed_loggedin`,
-`deployed_dealer_detail`, `deployed_add_review`.
+Tasks 1–23 were built and verified locally. This runbook covers the five
+artifacts that can only be produced inside the IBM Cloud lab: `deploymentURL`,
+`deployed_landingpage`, `deployed_loggedin`, `deployed_dealer_detail`,
+`deployed_add_review`.
 
-## Confidence note — read this first
+## Confidence note
 
 | Part | Status |
 |---|---|
-| Application code, Dockerfile, `deployment.yaml`, env-var wiring | **Verified locally** — the image builds and the app runs |
-| `ibmcloud ce` / `kubectl` command syntax, registry namespace variables, lab proxy URL scheme | **Not verifiable from outside the lab** — cross-check each against your lab instructions before running |
+| App code, Dockerfiles, both `deployment.yaml` files, env-var wiring | **Verified locally** |
+| `ibmcloud` / `kubectl` command syntax and the lab proxy URL scheme | **Not verifiable outside the lab** — if a command differs from your lab sheet, the lab sheet wins |
 
-The IBM lab rotates CLI syntax and environment-variable names between course
-revisions. Where a command below differs from your lab sheet, **the lab sheet
-wins**. The parts that matter and are verified are the two URLs the app needs
-and the fact that both are read from the environment.
-
-## What has to be true for the deployed app to work
-
-Three services, exactly as locally:
+## Architecture in the cluster
 
 ```
-Browser ──▶ Django (Kubernetes) ──┬──▶ Express + Mongo   (backend_url)
-                                  └──▶ Flask sentiment   (sentiment_analyzer_url)
+Browser ──▶ dealership (Django, :8000) ──┬──▶ dealership-api (Express, :3030) ──▶ mongo-db (:27017)
+                                         └──▶ sentianalyzer (Flask, Code Engine)
 ```
 
-Two environment variables carry those addresses. Get them wrong and the
-symptom is a **blank dealer table with no error**, because `restapis.get_request`
-logs the failure and returns `None`.
+Four env vars carry the wiring. Get them wrong and the failure is **silent** — a
+blank dealer table, no error page:
 
-- `backend_url` — no trailing slash, e.g. `http://mongo-express-service:3030`
-- `sentiment_analyzer_url` — **must end in `/`**, because `restapis.py` does
-  `sentiment_analyzer_url + "analyze/" + text`
+| Var | Value | Trap |
+|---|---|---|
+| `backend_url` | `http://dealership-api:3030` | **no** trailing slash |
+| `sentiment_analyzer_url` | Code Engine URL | **must** end in `/` |
+| `MONGO_URL` (api container) | `mongodb://mongo-db:27017/` | see below |
+| `DJANGO_ALLOWED_HOSTS` | your public host | omit it and Django 400s |
 
-## Part A — Sentiment analyzer to Code Engine
+**Why `MONGO_URL` exists:** `app.js` defaults to `mongodb://mongo_db:27017/`,
+the docker-compose service name. Kubernetes Service names cannot contain
+underscores, so no valid Service could ever answer that hostname. The api
+container overrides it to reach the `mongo-db` Service instead. Local
+docker-compose runs are unaffected — the default still applies there.
+
+## Step 0 — Get the repo into the lab (do this first)
+
+Every other step depends on it. The lab home directory does not have your fork
+until you clone it.
 
 ```bash
-cd server/djangoapp/microservices
+cd ~
+[ -d xrwvm-fullstack_developer_capstone ] \
+  || git clone https://github.com/rahmanazhar/xrwvm-fullstack_developer_capstone.git
+cd xrwvm-fullstack_developer_capstone
+git pull --ff-only
+export REPO=$(pwd)
 
-# The lab exposes your registry namespace as an env var; confirm its name.
-echo $SN_ICR_NAMESPACE
+# Confirm the three build inputs exist before going further.
+ls -l server/djangoapp/microservices/Dockerfile server/Dockerfile \
+      server/deployment.yaml server/database/deployment.yaml
+echo "namespace: $SN_ICR_NAMESPACE"
+```
 
+If `$SN_ICR_NAMESPACE` is empty, stop — nothing below will push correctly.
+
+## Step 1 — IBM Cloud context
+
+`ibmcloud ce` fails with *"No resource group targeted"* until this is set.
+
+```bash
+ibmcloud target -g Default
+ibmcloud ce project create --name sentianalyzer    # skip if it exists
+ibmcloud ce project select --name sentianalyzer
+```
+
+## Step 2 — Sentiment analyzer to Code Engine
+
+```bash
+cd $REPO/server/djangoapp/microservices
 docker build -t us.icr.io/$SN_ICR_NAMESPACE/senti_analyzer .
 docker push us.icr.io/$SN_ICR_NAMESPACE/senti_analyzer
-
-ibmcloud target -g Default
-ibmcloud ce project create --name sentianalyzer   # skip if it already exists
-ibmcloud ce project select --name sentianalyzer
 
 ibmcloud ce application create \
   --name sentianalyzer \
@@ -58,125 +82,118 @@ ibmcloud ce application create \
 ibmcloud ce application get --name sentianalyzer --output url
 ```
 
-**The container listens on 5000**, not 5050 — `microservices/Dockerfile` runs
-`flask run --host=0.0.0.0` with Flask's default port. 5050 is only the local
-convention. Set `--port 5000`.
+**Port 5000, not 5050.** `microservices/Dockerfile` runs `flask run
+--host=0.0.0.0` on Flask's default port; 5050 is only the local convention.
 
-Verify before moving on — this is the same check the rubric's Task 16 asks for:
+Verify, then save the URL **with a trailing slash**:
 
 ```bash
-curl "https://<your-code-engine-url>/analyze/Fantastic%20services"
+export SENTI_URL="https://<paste-code-engine-host>/"
+curl "${SENTI_URL}analyze/Fantastic%20services"
 # expect: {"sentiment": "positive"}
 ```
 
-If it returns a 500, the VADER lexicon is missing inside the image. See the
-lexicon note in [README.md](README.md#running-it-locally).
+A 500 here means the VADER lexicon is missing in the image — see README.
 
-## Part B — Express + MongoDB
-
-Deploy the `server/database` service so the cluster can reach it, then note its
-in-cluster address for `backend_url`. If your lab instead runs this with
-`docker compose` on the lab VM, use the address the lab gives you.
+## Step 3 — MongoDB + Express API to Kubernetes
 
 ```bash
-cd server/database
+cd $REPO/server/database
 docker build -t us.icr.io/$SN_ICR_NAMESPACE/dealership-api .
 docker push us.icr.io/$SN_ICR_NAMESPACE/dealership-api
+
+sed -i "s|<NAMESPACE>|$SN_ICR_NAMESPACE|g" deployment.yaml
+kubectl apply -f deployment.yaml
+kubectl get pods -w      # wait for both mongo-db and dealership-api to be Running
 ```
 
-Note: `app.js` connects to the literal host `mongo_db`, so whatever runs Mongo
-must be reachable under that name — or change the connection string in
-`app.js:14` to match your service name.
-
-Also note: `app.js` wipes and re-seeds both collections **on every start**, so a
-pod restart erases posted reviews. Capture `deployed_add_review` without
-restarting the API pod in between.
-
-## Part C — Django to Kubernetes
-
-1. Put the Code Engine URL into `server/djangoapp/.env` (trailing slash), or
-   better, set it via `deployment.yaml` env vars so the image stays generic.
-
-2. Edit `server/deployment.yaml`:
-   - replace `<NAMESPACE>` in the image with `$SN_ICR_NAMESPACE`
-   - set `sentiment_analyzer_url` to the Part A URL
-   - set `backend_url` to the Part B address
-
-3. Build, push, deploy:
+Confirm the API seeded 50 dealerships before moving on:
 
 ```bash
-cd server
+kubectl exec deployment.apps/dealership-api -- \
+  sh -c "wget -qO- http://localhost:3030/fetchDealers | head -c 120"
+```
+
+Note `app.js` wipes and re-seeds on **every start**, so restarting this pod
+erases posted reviews. Capture `deployed_add_review` without restarting it.
+
+## Step 4 — Django to Kubernetes
+
+```bash
+cd $REPO/server
 docker build -t us.icr.io/$SN_ICR_NAMESPACE/dealership .
 docker push us.icr.io/$SN_ICR_NAMESPACE/dealership
+
+sed -i "s|<NAMESPACE>|$SN_ICR_NAMESPACE|g" deployment.yaml
+sed -i "s|https://sentiment-analyzer.REPLACE_ME.codeengine.appdomain.cloud/|$SENTI_URL|" deployment.yaml
+grep -A2 -E "image:|sentiment_analyzer_url|backend_url" deployment.yaml   # eyeball it
+
 kubectl apply -f deployment.yaml
 kubectl get pods
 kubectl logs deployment.apps/dealership
 ```
 
-4. Allow the public hostname. Django rejects unknown hosts with
-   **DisallowedHost (400)**, which looks like a broken deployment. Add to the
-   container's `env:` in `deployment.yaml`:
+Then allow the public hostname. Django rejects unknown hosts with a 400
+`DisallowedHost`, which looks exactly like a broken deployment:
 
-```yaml
-- name: DJANGO_ALLOWED_HOSTS
-  value: "<your-public-host>,localhost,127.0.0.1"
-- name: DJANGO_CSRF_TRUSTED_ORIGINS
-  value: "https://<your-public-host>"
+```bash
+kubectl set env deployment/dealership \
+  DJANGO_ALLOWED_HOSTS="<your-public-host>,localhost,127.0.0.1" \
+  DJANGO_CSRF_TRUSTED_ORIGINS="https://<your-public-host>"
 ```
 
 `settings.py` reads both (comma separated) and appends them to the defaults, so
 no code change is needed.
 
-5. Expose it and get the URL:
+## Step 5 — Expose it and create users
 
 ```bash
 kubectl port-forward deployment.apps/dealership 8000:8000
 ```
 
-Then use the lab's "Launch Application" / proxy URL for port 8000. That URL is
-the answer to Task 24 — write it into a file named `deploymentURL` at the repo
-root and commit it.
+Use the lab's **Launch Application** on port 8000. That URL is Task 24 — write
+it into `deploymentURL` at the repo root, replacing the placeholder.
 
-6. Create the admin and demo users in the deployed pod:
+The container's SQLite database does not survive a pod restart, so create the
+users and take all four screenshots in one session:
 
 ```bash
 kubectl exec -it deployment.apps/dealership -- python manage.py migrate
 kubectl exec -it deployment.apps/dealership -- python manage.py createsuperuser
 ```
 
-The SQLite database lives in the container filesystem, so it does **not** persist
-across pod restarts. Create the users, then take the screenshots in one session.
+## Screenshots (Tasks 25–28)
 
-## Screenshots to capture (Tasks 25–28)
-
-Each must show the deployment URL in the browser address bar, matching
-`deploymentURL` exactly.
+Each must show the deployment URL in the address bar, matching `deploymentURL`.
 
 | File | Where | Must show |
 |---|---|---|
-| `deployed_landingpage` | `/` | landing page, deployment URL in address bar |
-| `deployed_loggedin` | `/dealers` after login | the logged-in **username** visible |
-| `deployed_dealer_detail` | `/dealer/15` | dealer details and its reviews |
-| `deployed_add_review` | `/dealer/15` after posting | your new review visible |
+| `deployed_landingpage` | `/` | landing page |
+| `deployed_loggedin` | `/dealers` after login | the logged-in **username** |
+| `deployed_dealer_detail` | `/dealer/15` | dealer details and reviews |
+| `deployed_add_review` | `/dealer/15` after posting | your new review |
 
-Dealer 15 (Tempsoft, San Antonio) already has 3 seed reviews, so it is the
-easiest dealer to demonstrate both the detail page and a newly added review.
+Dealer 15 (Tempsoft, San Antonio) ships with 3 seed reviews, so it demonstrates
+both the detail page and a newly added one.
 
-## If the dealer table is empty
+## If the dealer table is blank
 
-Work outward from Django, the same order used to verify this locally:
+Work outward from Django, the order used to verify this locally:
 
 ```bash
-# 1. Is Express reachable from inside the Django pod?
-kubectl exec -it deployment.apps/dealership -- python -c \
-  "import os,requests; u=os.getenv('backend_url'); print(u); print(requests.get(u+'/fetchDealers').json()[:1])"
+# 1. Can Django reach Express in-cluster?
+kubectl exec deployment.apps/dealership -- python -c \
+  "import os,requests; u=os.getenv('backend_url'); print(u, requests.get(u+'/fetchDealers').json()[:1])"
 
-# 2. Is the sentiment service reachable?
-curl "https://<code-engine-url>/analyze/Great"
+# 2. Can Express reach Mongo?
+kubectl logs deployment.apps/dealership-api | head -20
 
-# 3. What does Django itself return?
+# 3. Is the sentiment service up?
+curl "${SENTI_URL}analyze/Great"
+
+# 4. What does Django return?
 curl "<deployment-url>/djangoapp/get_dealers"
 ```
 
-A `{"status": 200, "dealers": null}` response means `backend_url` is wrong —
-Django reached its own view fine but could not reach Express.
+`{"status": 200, "dealers": null}` means `backend_url` is wrong — Django's own
+view ran fine but could not reach Express.

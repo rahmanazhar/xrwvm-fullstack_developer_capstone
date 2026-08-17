@@ -11,7 +11,12 @@ app.use(require('body-parser').urlencoded({ extended: false }));
 const reviews_data = JSON.parse(fs.readFileSync("reviews.json", 'utf8'));
 const dealerships_data = JSON.parse(fs.readFileSync("dealerships.json", 'utf8'));
 
-mongoose.connect("mongodb://mongo_db:27017/",{'dbName':'dealershipsDB'});
+// Defaults to the docker-compose service name for local runs. Kubernetes
+// Service names cannot contain underscores, so a cluster deployment must
+// override this with MONGO_URL (see server/database/deployment.yaml).
+const mongo_url = process.env.MONGO_URL || "mongodb://mongo_db:27017/";
+
+mongoose.connect(mongo_url,{'dbName':'dealershipsDB'});
 
 
 const Reviews = require('./review');
